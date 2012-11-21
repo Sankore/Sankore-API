@@ -1,0 +1,12 @@
+#ifndef SANKOREAPI_GLOBAL_H
+#define SANKOREAPI_GLOBAL_H
+
+#include <qglobal.h>
+
+#if defined(SANKOREAPI_LIBRARY)
+#  define SANKOREAPISHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define SANKOREAPISHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // SANKOREAPI_GLOBAL_H
