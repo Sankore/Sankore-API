@@ -25,8 +25,8 @@ public:
     virtual QObject* boardUser() = 0;
 
 public slots:
-    virtual void onActiveSceneChanged() = 0; // connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
-    virtual void onActiveDocumentChanged() = 0; // connect(UBApplication::boardController, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onActiveDocumentChanged()));
+    virtual void onActiveSceneChanged() = 0;
+    virtual void onActiveDocumentChanged() = 0;
 };
 
 Q_DECLARE_INTERFACE(IBoardUser, "org.open-sankore.interfaces.IBoardUser")

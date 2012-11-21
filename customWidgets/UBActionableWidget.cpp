@@ -12,14 +12,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #include <QPainter>
 #include <QDebug>
 
 #include "UBActionableWidget.h"
-
 #include "devtools/memcheck.h"
 
+/**
+ * \brief Constructor
+ */
 UBActionableWidget::UBActionableWidget(QWidget *parent, const char *name):QWidget(parent)
   , mShowActions(false)
 {
@@ -31,11 +32,18 @@ UBActionableWidget::UBActionableWidget(QWidget *parent, const char *name):QWidge
     connect(&mCloseButtons, SIGNAL(clicked()), this, SLOT(onCloseClicked()));
 }
 
+/**
+ * \brief Destructor
+ */
 UBActionableWidget::~UBActionableWidget()
 {
 
 }
 
+/**
+ * \brief Add an action to the widget
+ * @param act as the action to add
+ */
 void UBActionableWidget::addAction(eAction act)
 {
     if(!mActions.contains(act)){
@@ -43,6 +51,10 @@ void UBActionableWidget::addAction(eAction act)
     }
 }
 
+/**
+ * \brief Remove an action from the widget
+ * @param act as the action to remove
+ */
 void UBActionableWidget::removeAction(eAction act)
 {
     if(mActions.contains(act)){
@@ -50,11 +62,18 @@ void UBActionableWidget::removeAction(eAction act)
     }
 }
 
+/**
+ * \brief Remove all actions from the widget
+ */
 void UBActionableWidget::removeAllActions()
 {
     mActions.clear();
 }
 
+/**
+ * \brief Set the actions visible state
+ * @param act as the action to add
+ */
 void UBActionableWidget::setActionsVisible(bool bVisible)
 {
     if(!mActions.empty() && mActions.contains(eAction_Close)){
@@ -62,11 +81,18 @@ void UBActionableWidget::setActionsVisible(bool bVisible)
     }
 }
 
+/**
+ * \brief Handle the close event
+ */
 void UBActionableWidget::onCloseClicked()
 {
     emit close(this);
 }
 
+/**
+ * \brief Set the actions parent
+ * @param parent as the actions parent
+ */
 void UBActionableWidget::setActionsParent(QWidget *parent)
 {
     if(mActions.contains(eAction_Close)){
@@ -74,6 +100,10 @@ void UBActionableWidget::setActionsParent(QWidget *parent)
     }
 }
 
+/**
+ * \brief Unset the actions parent
+ * @param parent as the actions parent
+ */
 void UBActionableWidget::unsetActionsParent()
 {
     if(mActions.contains(eAction_Close)){

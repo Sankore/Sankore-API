@@ -12,7 +12,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #ifndef UBACTIONABLEWIDGET_H
 #define UBACTIONABLEWIDGET_H
 
@@ -25,6 +24,9 @@
 
 #define ACTIONSIZE  16
 
+/**
+  * This enum defines the different actions.
+  */
 typedef enum{
     eAction_Close,
     eAction_MoveUp,
@@ -48,15 +50,17 @@ signals:
 protected:
     void setActionsParent(QWidget* parent);
     void unsetActionsParent();
+    /** List of actions */
     QVector<eAction> mActions;
+    /** Close button */
     QPushButton mCloseButtons;
 
 private slots:
     void onCloseClicked();
 
 private:
+    /** Show actions flag */
     bool mShowActions;
-
 };
 
 #endif // UBACTIONABLEWIDGET_H

@@ -22,7 +22,6 @@
 #include <QSlider>
 #include <QMouseEvent>
 #include <QStackedWidget>
-
 #include <phonon/MediaObject>
 #include <phonon/VideoWidget>
 #include <phonon/AudioOutput>
@@ -34,7 +33,7 @@
 #define TICK_INTERVAL                   1000
 
 /**
-  * \brief The media type
+  * Media types
   */
 typedef enum{
     eMediaType_Video,

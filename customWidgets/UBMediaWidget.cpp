@@ -12,7 +12,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-//#include "core/UBApplication.h"
 #include "globals/UBGlobals.h"
 #include "UBMediaWidget.h"
 
@@ -112,6 +111,10 @@ eMediaType UBMediaWidget::mediaType()
     return mType;
 }
 
+/**
+ * \brief Handles the show event
+ * @param event as the show event
+ */
 void UBMediaWidget::showEvent(QShowEvent* event)
 {
 	if(mType == eMediaType_Audio){
@@ -131,6 +134,10 @@ void UBMediaWidget::showEvent(QShowEvent* event)
 	}
 }
 
+/**
+ * \brief Handles the hide event
+ * @param event as the hide event
+ */
 void UBMediaWidget::hideEvent(QHideEvent* event)
 {
     if(mpMediaObject->state() == Phonon::PlayingState)
