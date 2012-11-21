@@ -26,11 +26,15 @@ MOC_DIR = $$BUILD_DIR/moc
 RCC_DIR = $$BUILD_DIR/rcc
 UI_DIR = $$BUILD_DIR/ui
 
-# 3rd party libraries
+# 3rd party static libraries
 THIRDPARTY_PATH = $$PWD/../Sankore-ThirdParty
-QUAZIP_PATH = $$THIRDPARTY_PATH/quazip
-DEPENDPATH += $$QUAZIP_PATH/
-INCLUDEPATH += $$QUAZIP_PATH/quazip-0.3
+QUAZIP_BASEPATH = $$THIRDPARTY_PATH/quazip
+QUAZIP_PATH = $$QUAZIP_BASEPATH/lib
+macx:QUAZIP_PATH = $$QUAZIP_PATH/macx
+win32:QUAZIP_PATH = $$QUAZIP_PATH/win32
+linug-g++*:QUAZIP_PATH = $$QUAZIP_PATH/linux
+LIBS += -L$$QUAZIP_PATH -lquazip
+INCLUDEPATH += $$QUAZIP_BASEPATH/quazip-0.3
 
 # Subprojects
 ABSTRACT_PATH = $$PWD/abstract
