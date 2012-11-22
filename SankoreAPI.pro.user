@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by Qt Creator 2.4.1, 2012-11-21T11:35:50. -->
+<!-- Written by Qt Creator 2.4.1, 2012-11-22T15:34:00. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -128,7 +128,7 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.2">
       <value type="QString" key="ProjectExplorer.ProcessStep.Arguments">Doxyfile</value>
       <value type="QString" key="ProjectExplorer.ProcessStep.Command">doxygen</value>
-      <value type="bool" key="ProjectExplorer.ProcessStep.Enabled">true</value>
+      <value type="bool" key="ProjectExplorer.ProcessStep.Enabled">false</value>
       <value type="QString" key="ProjectExplorer.ProcessStep.WorkingDirectory">%{buildDir}</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Custom Process Step</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>

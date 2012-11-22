@@ -32,6 +32,14 @@ typedef enum
     eUBDockPaletteWidget_DESKTOP
 } eUBDockPaletteWidgetMode;
 
+/**
+ * This enum defines the dock palette position
+ */
+typedef enum{
+    eDockOrientation_Left,
+    eDockOrientation_Right
+}eDockOrientation;
+
 class SANKOREAPISHARED_EXPORT UBDockPaletteWidget : public QWidget
 {
     Q_OBJECT
@@ -46,6 +54,8 @@ public:
     void registerMode(eUBDockPaletteWidgetMode mode);
     bool visibleState(){return mVisibleState;}
     void setVisibleState(bool state){mVisibleState = state;}
+    void setOrientation(eDockOrientation orientation){mOrientation = orientation;}
+    eDockOrientation orientation(){return mOrientation;}
 
 signals:
     void hideTab(UBDockPaletteWidget* widget);
@@ -65,6 +75,8 @@ protected:
     QVector<eUBDockPaletteWidgetMode> mRegisteredModes;
     /** Visible state flag */
     bool mVisibleState;
+    /** Default orientation */
+    eDockOrientation mOrientation;
 };
 
 #endif // UBDOCKPALETTEWIDGET_H

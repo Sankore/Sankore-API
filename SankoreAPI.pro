@@ -62,3 +62,6 @@ HEADERS += SankoreAPI_global.h
 
 SOURCES += \
     main.cpp
+
+RESOURCES += \
+    resources/api.qrc
