@@ -15,6 +15,7 @@
 #ifndef UBABSTRACTMETADATAPROVIDER_H
 #define UBABSTRACTMETADATAPROVIDER_H
 
+#include <QObject>
 #include <QString>
 #include <QVector>
 #include <QList>
@@ -22,7 +23,9 @@
 #include "SankoreAPI_global.h"
 #include "interfaces/IMetaDataProvider.h"
 
-class SANKOREAPISHARED_EXPORT UBAbstractMetaDataProvider : public IMetaDataProvider{
+class SANKOREAPISHARED_EXPORT UBAbstractMetaDataProvider : public QObject, public IMetaDataProvider{
+    Q_OBJECT
+    Q_INTERFACES(IMetaDataProvider)
 public:
     UBAbstractMetaDataProvider();
     ~UBAbstractMetaDataProvider();

@@ -16,8 +16,6 @@
 #define IMETADATAPROVIDER_H
 
 #include <QString>
-#include <QVector>
-
 #include "SankoreAPI_global.h"
 
 typedef struct{
@@ -43,5 +41,7 @@ public:
     virtual QString nameSpace()=0;
     virtual QString nameSpaceUrl()=0;
 };
+
+Q_DECLARE_INTERFACE(IMetaDataProvider, "org.open-sankore.interfaces.IMetaDataProvider")
 
 #endif // IMETADATAPROVIDER_H
